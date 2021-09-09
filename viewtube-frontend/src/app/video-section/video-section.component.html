@@ -1,0 +1,19 @@
+<div class="col-lg-3 mb-4">
+  <div class="card h-100">
+    <a (click)="handleCick()"><img class="card-img-top" src="{{ thumbnail }}" alt="" /></a>
+    <div class="card-body">
+      <h6 class="">
+        <a href="#">{{ videoTitle.substring(0,30) }}...</a>
+        <p>{{channelTitle}}</p>
+        <!-- <fa-icon [icon]="faHeart" ></fa-icon> -->
+
+        <button style="border: none; outline: none; background-color: transparent; color: red;" (click)="addToFav(thumbnail,videoTitle,channelTitle,videoId)"><fa-icon [icon]="faHeart" ></fa-icon></button>  
+      </h6>
+      <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod
+                        odio, gravida pellentesque urna varius vitae.</p> -->
+    </div>
+  </div>
+</div>
+
+<!-- <img class="img-thumbnail" src="{{thumbnail}}"/>
+      {{videoTitle}} &nbsp;&nbsp; -->

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <h1 (click)="getHome()" style="cursor: pointer;">Viewtube</h1>
+  <form class="form-inline">
+    <input #channelName class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button  class="btn btn-outline-dark my-2 my-sm-0" type="submit" >Search</button>
+  </form>
+</nav>
+<hr>
+
+<!-- <ul *ngFor="let channel of favChannelList">
+    <a target="_blank" href="https://www.youtube.com/channel/{{channel.snippet.channelId}}">
+    <img class="img-thumbnail" src="{{channel.snippet.thumbnails.default.url}}"/></a>
+    {{channel.snippet.channelTitle}} &nbsp;&nbsp;
+   
+  </ul> -->
+  
+  
+
+<!-- <div class="row"> -->
+  <ul *ngFor="let favoriteVideo of userFavourites"> 
+  <!-- <app-video-section [thumbnail]="favoriteVideo.thumbnail" [videoTitle]="favoriteVideo.videoTitle" [channelTitle]="favoriteVideo.channelTitle" [videoId]="favoriteVideo.videoId"></app-video-section> -->
+  <youtube-player 
+  videoId={{favoriteVideo.videoId}} 
+  suggestedQuality="highres" 
+  [height]="500" 
+  [width]="750" >
+</youtube-player>
+  </ul>
+<!-- </div> -->

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <h1 (click)="getHome()" style="cursor: pointer;">Viewtube</h1>
+    <form class="form-inline">
+      <input #channelName class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button  class="btn btn-outline-dark my-2 my-sm-0" type="submit" >Search</button>
+      <button (click)="logout()"  class="btn btn-outline-dark my-2 my-sm-0 mx-2" type="button" >Logout</button>
+    </form>
+  </nav>
+  <hr>
+  <div class="mx-4">
+<!-- <h2>Id : {{userDetails.userId}}</h2> -->
+<h2>Name : {{userDetails.name}}</h2>
+<h2>Email : {{userDetails.email}}</h2>
+</div>
+
+
+
+<button class= "btn btn-outline-dark my-2 my-sm-0 mx-4 mt-3" (click)="getFavourites()">My Favourites</button>
+  
+<!-- <button class= "btn btn-outline-dark my-2 my-sm-0 mx-4 mt-3" (click)="getUserDetails()">My Details</button> -->
+
