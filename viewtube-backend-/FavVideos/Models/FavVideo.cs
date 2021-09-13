@@ -6,6 +6,7 @@ namespace FavVideos.Models
 {
     public class FavVideo
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
 
@@ -16,7 +17,7 @@ namespace FavVideos.Models
         public string Thumbnail { get; set; }
 
         [JsonProperty(PropertyName = "videoTitle")]
-        public string videoTitle { get; set; }
+        public string VideoTitle { get; set; }
 
         [JsonProperty(PropertyName = "channelTitle")]
         public string ChannelTitle { get; set; }

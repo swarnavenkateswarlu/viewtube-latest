@@ -3,11 +3,11 @@
     <a (click)="handleCick()"><img class="card-img-top" src="{{ thumbnail }}" alt="" /></a>
     <div class="card-body">
       <h6 class="">
-        <a href="#">{{ videoTitle.substring(0,30) }}...</a>
+        <a (click)="handleCick()" style="cursor: pointer;">{{ videoTitle.substring(0,30) }}...</a>
         <p>{{channelTitle}}</p>
         <!-- <fa-icon [icon]="faHeart" ></fa-icon> -->
 
-        <button style="border: none; outline: none; background-color: transparent; color: red;" (click)="addToFav(thumbnail,videoTitle,channelTitle,videoId)"><fa-icon [icon]="faHeart" ></fa-icon></button>  
+        <button style="border: none; outline: none; background-color: transparent;" (click)="addToFav(thumbnail,videoTitle,channelTitle,videoId)"><fa-icon style="color: red;" class="far fa-heart" [icon]="faHeart" ></fa-icon>Fav</button>  
       </h6>
       <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod
                         odio, gravida pellentesque urna varius vitae.</p> -->

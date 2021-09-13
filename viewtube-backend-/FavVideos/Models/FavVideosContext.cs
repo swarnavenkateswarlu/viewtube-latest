@@ -14,6 +14,6 @@ namespace FavVideos.Models
             Database.EnsureCreated();
         }
 
-        public DbSet<FavVideo> FavVideos { get; set; }
+        public DbSet<FavVideo> FavVideosTable { get; set; }
     }
 }
