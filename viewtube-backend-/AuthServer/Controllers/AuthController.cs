@@ -46,7 +46,7 @@ namespace AuthServer.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IActionResult LoginUser([FromBody] User user)
+        public IActionResult LoginUser([FromBody] LoginUser user)
         {
             try
             {
