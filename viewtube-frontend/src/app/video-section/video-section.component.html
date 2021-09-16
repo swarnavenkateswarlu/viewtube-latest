@@ -13,11 +13,11 @@
       <a (click)="handleCick()"><img class="card-img-top" src="{{ thumbnail }}" alt="" /></a>
       <div class="card-body">
         <h6 class="">
-          <a href="#">{{ videoTitle.substring(0,30) }}...</a>
+          <a style="cursor: pointer; color: rgb(76, 111, 207); text-decoration: none;" (click)="handleCick()">{{ videoTitle.substring(0,30) }}...</a>
           <p>{{channelTitle}}</p>
           <!-- <fa-icon [icon]="faHeart" ></fa-icon> -->
   
-          <button style="border: none; outline: none; background-color: transparent; color: red;" (click)="addToFav(thumbnail,videoTitle,channelTitle,videoId)"><i class="{{ iconClass }}"></i>Fav</button>  
+          <app-fav-button></app-fav-button>  
         </h6>
         <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod
                           odio, gravida pellentesque urna varius vitae.</p> -->

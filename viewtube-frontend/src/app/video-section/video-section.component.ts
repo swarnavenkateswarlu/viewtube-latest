@@ -30,31 +30,7 @@ export class VideoSectionComponent implements OnInit {
     this.router.navigate(['videoplayer'])
    
   }
-  addToFav(thumbnail,videoTitle,channelTitle,videoId){
-
-    var isLoggedIn = sessionStorage.getItem("email");
-    if(isLoggedIn != null) {
-      console.log(isLoggedIn);
-      this.isFav = !this.isFav;
-   
-      this.isFav ? this.iconClass = "fas fa-heart" : this.iconClass = "far fa-heart"
-     
-      var videoDetails = { 
-        thumbnail: thumbnail, 
-        videoTitle: videoTitle,
-        channelTitle : channelTitle,
-        videoId : videoId 
-     }; 
-     this.shared.addToFavourite(videoDetails);
-      console.log("addint to favlist:",videoDetails);
-    }
-    else
-    {
-      return alert("Login first");
-    }
-    
-   
-  }
+  
   ngOnInit(): void {
     
   }
