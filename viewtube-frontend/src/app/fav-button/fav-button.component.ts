@@ -15,6 +15,7 @@ export class FavButtonComponent implements OnInit {
   @Input() isUserProfile : any;
   isFav : boolean = false;
   iconClass : string = "far fa-heart";
+  userId : number ;
 
   constructor(private shared:SharedService) { }
 
@@ -27,6 +28,7 @@ export class FavButtonComponent implements OnInit {
       this.isFav ? this.iconClass = "fas fa-heart" : this.iconClass = "far fa-heart"
      
       var videoDetails = { 
+        userId: this.userId,
         thumbnail: thumbnail, 
         videoTitle: videoTitle,
         channelTitle : channelTitle,

@@ -14,6 +14,7 @@ export class ApiServiceService {
   constructor(private httpservice:HttpClient) { }
  getPopularVideos():Observable<any>{
    const API_KEY=this.API_KEY;
+
    const url="https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=in&maxResults=9&key="+API_KEY
  return this.httpservice.get<any>(url);
   }

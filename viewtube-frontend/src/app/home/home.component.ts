@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
   //email : any = sessionStorage.getItem("email");
 
   userprofile() {
-    // this.authservice.getUser(this.email).subscribe(
-    //   (res: any) => {
+    this.authservice.getUser().subscribe(
+      (res: any) => {
     //     //var name = sessionStorage.setItem('name');
 
        // this.isUser = true;
@@ -38,8 +38,8 @@ export class HomeComponent implements OnInit {
       // },
       // (error: any) => {
       //   console.log(error);
-      // }
-    // )
+      }
+    )
     
   }
 
@@ -58,13 +58,14 @@ export class HomeComponent implements OnInit {
     this.catChannl=data.items;
     console.log(this.catChannl);
   });
+
 }
   //testing
   
-  addfav(channel) {
-    console.log("channel:", channel)
-    this.mservice.addFav(channel);
-  }
+  // addfav(channel) {
+  //   console.log("channel:", channel)
+  //   this.mservice.addFav(channel);
+  // }
   // Getchannel(){
   //   let channelName=this.channelName.nativeElement.value;
   //   this.service.getChannels(channelName).subscribe(

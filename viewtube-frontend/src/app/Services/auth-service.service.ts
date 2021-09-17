@@ -11,8 +11,8 @@ export class AuthServiceService {
 
   constructor(private httpclient:HttpClient) { }
 
-  //emailIs : any = sessionStorage.getItem("email");
-  emailIs : any ;
+  emailIs : any = sessionStorage.getItem("email");
+  //emailIs : any ;
 
   loginApiEndPoint : string = `http://localhost:5000/api/auth/login`;
   registerApiEndPoint : string = `http://localhost:5000/api/auth/register`;

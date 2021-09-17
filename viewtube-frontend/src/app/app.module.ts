@@ -15,6 +15,7 @@ import { VideoSectionComponent } from './video-section/video-section.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import { FavButtonComponent } from './fav-button/fav-button.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FavButtonComponent } from './fav-button/fav-button.component';
     VideoSectionComponent,
     VideoplayerComponent,
     FavButtonComponent,
+    SideBarComponent,
   
    
   ],
