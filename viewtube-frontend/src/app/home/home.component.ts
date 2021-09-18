@@ -13,7 +13,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent implements OnInit {
   faUser = faUser;
-  
   @ViewChild('channelName') channelName: ElementRef;
   @ViewChild('categoryChannel') categoryChannel: ElementRef;
   popularVideos: any
@@ -31,13 +30,8 @@ export class HomeComponent implements OnInit {
   userprofile() {
     this.authservice.getUser().subscribe(
       (res: any) => {
-    //     //var name = sessionStorage.setItem('name');
-
-       // this.isUser = true;
         this.router.navigate(['userprofile'])
-      // },
-      // (error: any) => {
-      //   console.log(error);
+ 
       }
     )
     
@@ -101,5 +95,8 @@ export class HomeComponent implements OnInit {
   
     // }
 
+    getFavourites(){
+      this.router.navigate(['fav'])
+    }
 
 }

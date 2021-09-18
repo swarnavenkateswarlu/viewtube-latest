@@ -29,5 +29,9 @@ export class FavouriteComponent implements OnInit {
   getHome(){
     this.router.navigate(['home'])
   }
+  logout(){
+    sessionStorage.clear();
+    this.router.navigate(['login'])
+  }
 
 }

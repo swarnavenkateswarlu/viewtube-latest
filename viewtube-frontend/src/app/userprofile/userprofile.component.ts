@@ -15,10 +15,10 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
 })
 export class UserprofileComponent implements OnInit {
 
-   
+  videosByCategory:any;
    //userdetails:User[];
   //user:any=new loginUser();
-  constructor( private router:Router,private authService: AuthServiceService,private mservice:MiddleService,private share:SharedService) { }
+  constructor( private router:Router,private service:ApiServiceService,private authService: AuthServiceService,private mservice:MiddleService,private share:SharedService) { }
  
    userDetails : any;
 
@@ -52,4 +52,10 @@ export class UserprofileComponent implements OnInit {
     this.router.navigate(['home'])
   }
 
+category(id) {
+  this.service.categoryChannels(id).subscribe((data) => {
+    console.log('got videos by category', data);
+    this.videosByCategory = data.items;
+  });
+}
 }
