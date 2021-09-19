@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FavVideos.Models;
+using FavVideos.Services;
 
 namespace FavVideos.Controllers
 {
@@ -13,33 +14,42 @@ namespace FavVideos.Controllers
     public class FavouriteVideosController : ControllerBase
     {
         //private readonly IFavVideosRepository repo;
-        private readonly FavVideosContext repo;
-        public FavouriteVideosController(FavVideosContext _repo)
+        private readonly IFavVideoService service;
+        public FavouriteVideosController(IFavVideoService _service)
         {
-            this.repo = _repo;
+            this.service = _service;
         }
 
-        [HttpGet]
-        public List<FavVideo> GetVideosList(int userId)
+        [HttpGet("{userId}")]
+        public IActionResult GetVideosList(int userId)
         {
-            var favVideoList = repo.FavVideos.Where(v => v.UserId == userId).ToList();
-            return favVideoList;
+            var favVideoList = service.GetFavVideoList(userId);
+            return StatusCode(200, favVideoList);
         }
 
         [HttpPost("delete")]
-        public FavVideo DeleteVideo(FavVideo favVideo)
+        public IActionResult DeleteVideo(FavVideo favVideo)
         {
-            repo.FavVideos.Add(favVideo);
-            repo.SaveChanges();
-            return favVideo;
+            service.DeleteFavVideo(favVideo);
+            //return favVideo;
+            return Ok("Deleted");
         }
 
         [HttpPost("add")]
-        public FavVideo AddVideo(FavVideo favVideo)
+        public IActionResult AddVideo(FavVideo favVideo)
         {
-            repo.FavVideos.Remove(favVideo);
-            repo.SaveChanges();
-            return favVideo;
+            if (ModelState.IsValid)
+            {
+                service.AddFavVideo(favVideo);
+                //return favVideo;
+                return Ok("created");
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+                
+            
         }
 
     }

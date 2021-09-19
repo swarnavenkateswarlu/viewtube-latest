@@ -1,19 +1,12 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AuthServer
 {
-    public class User
+    public class LoginUser
     {
-        [JsonProperty(PropertyName = "userId")]
-        public int UserId { get; set; }
-
-        [Required(ErrorMessage = "Employee Name is required")]  
-        [StringLength(35, MinimumLength = 3)]
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
-
+        
         [Required(ErrorMessage = "Please enter your email address")]  
         [DataType(DataType.EmailAddress)]  
         [EmailAddress]
