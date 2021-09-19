@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
 #heading {
@@ -10,11 +9,6 @@
    color : black;
   /* color: black; */
 } 
-
-.sbtn{
-  background-color: white;
-  color: black;
-}
 
 
 .dropdown-menu{

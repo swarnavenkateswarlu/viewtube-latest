@@ -14,6 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { VideoSectionComponent } from './video-section/video-section.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+import { FavButtonComponent } from './fav-button/fav-button.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { VideoplayerComponent } from './videoplayer/videoplayer.component';
     UserprofileComponent,
     VideoSectionComponent,
     VideoplayerComponent,
+    FavButtonComponent,
+    SideBarComponent,
   
    
   ],

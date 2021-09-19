@@ -13,7 +13,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent implements OnInit {
   faUser = faUser;
-  
   @ViewChild('channelName') channelName: ElementRef;
   @ViewChild('categoryChannel') categoryChannel: ElementRef;
   popularVideos: any
@@ -29,17 +28,12 @@ export class HomeComponent implements OnInit {
   //email : any = sessionStorage.getItem("email");
 
   userprofile() {
-    // this.authservice.getUser(this.email).subscribe(
-    //   (res: any) => {
-    //     //var name = sessionStorage.setItem('name');
-
-       // this.isUser = true;
+    this.authservice.getUser().subscribe(
+      (res: any) => {
         this.router.navigate(['userprofile'])
-      // },
-      // (error: any) => {
-      //   console.log(error);
-      // }
-    // )
+ 
+      }
+    )
     
   }
 
@@ -58,13 +52,14 @@ export class HomeComponent implements OnInit {
     this.catChannl=data.items;
     console.log(this.catChannl);
   });
+
 }
   //testing
   
-  addfav(channel) {
-    console.log("channel:", channel)
-    this.mservice.addFav(channel);
-  }
+  // addfav(channel) {
+  //   console.log("channel:", channel)
+  //   this.mservice.addFav(channel);
+  // }
   // Getchannel(){
   //   let channelName=this.channelName.nativeElement.value;
   //   this.service.getChannels(channelName).subscribe(
@@ -100,5 +95,8 @@ export class HomeComponent implements OnInit {
   
     // }
 
+    getFavourites(){
+      this.router.navigate(['fav'])
+    }
 
 }
