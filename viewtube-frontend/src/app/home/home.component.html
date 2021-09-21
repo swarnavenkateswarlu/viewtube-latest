@@ -44,12 +44,7 @@
       <li>
         <a href="/home"><i class="fas fa-home"></i>Home</a>
       </li>
-       <li>
-        <a style="cursor: pointer" name="User Profile" (click)="userprofile()">
-          UserDetails
-          
-        </a>
-      </li> 
+ 
       <li>
         <a (click)="getFavourites()" style="cursor: pointer" name="Favourites" >
           My Favourites
@@ -81,10 +76,13 @@
           class="dropdown-menu"
           aria-labelledby="dropdownMenuButton1"
           style="cursor: pointer;"
-        >   <a class="dropdown-item" (click)="category(1)">Film & Animation</a> &nbsp;
-            <a class="dropdown-item" (click)="category(2)">Autos & Vehicles</a> &nbsp;
-            <a class="dropdown-item" (click)="category(10)">Music</a> &nbsp;
-            <a class="dropdown-item" (click)="category(27)">Education</a>
+        >   <p><a class="dropdown-item" (click)="category(28)">Science & Technology</a></p> 
+             <br>
+            <p><a class="dropdown-item" (click)="category(27)">Education</a></p>
+            <br>
+            <p><a class="dropdown-item" (click)="category(25)">News & Politics</a></p> 
+            <br>
+            <p><a class="dropdown-item" (click)="category(10)">Music</a></p> 
         </div>
       </li>
     </ul>

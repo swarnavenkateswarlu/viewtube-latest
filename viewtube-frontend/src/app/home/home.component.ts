@@ -28,12 +28,20 @@ export class HomeComponent implements OnInit {
   //email : any = sessionStorage.getItem("email");
 
   userprofile() {
-    this.authservice.getUser().subscribe(
-      (res: any) => {
-        this.router.navigate(['userprofile'])
- 
-      }
-    )
+    var isLoggedIn = sessionStorage.getItem("email");
+    if(isLoggedIn != null){
+      this.authservice.getUser().subscribe(
+        (res: any) => {
+          this.router.navigate(['userprofile'])
+   
+        }
+      )
+    }
+    else{
+      alert("you need to login first");
+      this.router.navigate(['/']);
+    }
+    
     
   }
 

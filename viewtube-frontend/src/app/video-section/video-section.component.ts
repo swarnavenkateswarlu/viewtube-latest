@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from '../Services/shared.service';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { AuthServiceService } from '../Services/auth-service.service';
 
 
 @Component({
@@ -19,9 +20,9 @@ export class VideoSectionComponent implements OnInit {
   isFav : boolean = false;
   iconClass : string = "far fa-heart";
   
-  
-
-  constructor(private router:Router,private shared:SharedService) { }
+  userDetails:any;
+  singleUser:any;
+  constructor(private router:Router,private authService:AuthServiceService,private shared:SharedService) { }
 
   handleCick(){
     
@@ -32,7 +33,13 @@ export class VideoSectionComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    
+    this.authService.getUser().subscribe((res) => {
+      console.log("in video section");
+      
+      //console.log(res);
+      this.userDetails=res;
+      this.singleUser=this.userDetails.userId;
+    });
   }
 
 }
