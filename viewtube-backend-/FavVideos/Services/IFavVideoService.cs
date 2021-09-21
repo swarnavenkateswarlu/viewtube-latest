@@ -4,15 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using FavVideos.Models;
 
-namespace FavVideos.Models
+namespace FavVideos.Services
 {
-    public interface IFavVideosRepository
+    public interface IFavVideoService
     {
         FavVideo AddFavVideo(FavVideo favVideo);
         FavVideo DeleteFavVideo(FavVideo favVideo);
-
         List<FavVideo> GetFavVideoList(int userId);
-
-        // FavVideo GetFavVideo(FavVideo favVideo);
     }
 }

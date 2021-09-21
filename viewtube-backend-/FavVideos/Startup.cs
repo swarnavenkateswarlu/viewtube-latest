@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FavVideos.Models;
+using FavVideos.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace FavVideos
@@ -27,6 +28,8 @@ namespace FavVideos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IFavVideoService, FavVideoService>();
+            services.AddScoped<IFavVideosRepository, FavVideosRepository>();
             string constr = Environment.GetEnvironmentVariable("SQLSERVER_Auth");
             if (constr == null)
             {
@@ -34,7 +37,6 @@ namespace FavVideos
             }
 
             services.AddDbContext<FavVideosContext>(options => options.UseSqlServer(constr));
-            //services.AddScoped<IFavVideosRepository, FavVideosRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

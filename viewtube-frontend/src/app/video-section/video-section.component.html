@@ -4,14 +4,13 @@
     <div class="card-body">
       <h6 class="">
         <a style="cursor: pointer; color: primary" (click)="handleCick()">{{ videoTitle.substring(0,30) }}...</a>
+
         <div style="display: flex; justify-content: space-between;">
           <p>{{channelTitle}}</p>
           <app-fav-button [userId]="singleUser"[thumbnail]="thumbnail"[videoId]="videoId" [channelTitle]="channelTitle" [videoTitle]="videoTitle"></app-fav-button>
         </div>
         
         <!-- <fa-icon [icon]="faHeart" ></fa-icon> -->
-
-         
       </h6>
       <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod
                         odio, gravida pellentesque urna varius vitae.</p> -->
