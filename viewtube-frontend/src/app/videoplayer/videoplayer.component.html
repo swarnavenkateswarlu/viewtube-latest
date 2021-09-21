@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a href="/home"><h1 style="cursor: pointer;">Viewtube</h1></a>
+  <form class="form-inline">
+    <input #channelName class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button  class="btn btn-outline-dark my-2 my-sm-0" type="submit" >Search</button>
+    <!-- <button  class="btn btn-outline-dark my-2 my-sm-0 mx-2" type="button" >Logout</button> -->
+  </form>
+</nav>
+<hr>
+<div class="v-player">
+<youtube-player 
+  videoId="{{videoId}}" 
+  suggestedQuality="highres" 
+  [height]="500" 
+  [width]="750" >
+</youtube-player>
+</div>

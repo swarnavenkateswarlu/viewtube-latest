@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <h1 (click)="getHome()" style="cursor: pointer;">Viewtube</h1>
+    <form class="form-inline">
+      <input #channelName class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button  class="btn btn-outline-dark my-2 my-sm-0" type="submit" >Search</button>
+      <button (click)="logout()"  class="btn btn-outline-dark my-2 my-sm-0 mx-2" type="button" >Logout</button>
+    </form>
+  </nav>
+  <hr>
+  <div class="mx-4">
+<!-- <h2>Id : {{userDetails.userId}}</h2> -->
+<table>
+  <h2>UserDetails</h2>
+  <tr>
+    <td>
+<h5>Name </h5>
+    </td>
+<td>
+  <h5>: {{userDetails.name}}</h5>
+</td>
+</tr>
+
+<tr>
+  <td>
+<h5>Email </h5> </td>
+
+<td><h5>: {{userDetails.email}}</h5>
+</td>
+</tr>
+<tr>
+  <td>
+<h5>PhoneNumber 
+</h5></td><td><h5>: {{userDetails.phoneNumber}}</h5>
+  </td>
+</tr>
+
+<tr>
+  <td>
+<h5>Address </h5>
+</td><td><h5>: {{userDetails.address}}</h5></td>
+</tr>
+</table>
+<!--<a>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+</svg><p>add another account</p></a>-->
+</div>
+
+
+
+<button class= "btn btn-outline-dark my-2 my-sm-0 mx-4 mt-3" (click)="getFavourites()">My Favourites</button>
+  
+<!-- <button class= "btn btn-outline-dark my-2 my-sm-0 mx-4 mt-3" (click)="getUserDetails()">My Details</button> -->
+

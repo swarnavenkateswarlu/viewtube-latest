@@ -1,0 +1,74 @@
+<div>
+  <!-- <img class="logo" src="../../assets/logo.svg" alt="">  -->
+  
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <h1>Viewtube</h1>
+    <form class="form-inline">
+      <input #channelName class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button  class="btn btn-outline-dark my-2 my-sm-0" type="submit" (click)="searchVideos()">Search</button>
+      <button name="User Profile" class="btn btn-btn-primary mx-2" (click)="userprofile()"><fa-icon [icon]="faUser" style="position:relative;"></fa-icon></button>
+    </form>
+  </nav>
+  <hr>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle mx-3"   type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Categories
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="cursor: pointer;">
+      <li><a class="dropdown-item" (click)="category(1)" >Film & Animation</a></li>
+      <li><a class="dropdown-item" (click)="category(2)">Autos & Vehicles</a></li>
+      <li><a class="dropdown-item" (click)="category(10)">Music</a></li>
+      <li><a class="dropdown-item" (click)="category(27)">Education</a></li>
+    </ul>
+  </div>
+  <hr>
+
+  <hr>
+  <div class="row">
+  <ul *ngFor="let videosByCategory of videosByCategory"> 
+  <app-video-section [thumbnail]="videosByCategory.snippet.thumbnails.medium.url" [videoTitle]="videosByCategory.snippet.title" [channelTitle]="videosByCategory.snippet.channelTitle" [videoId]="videosByCategory.id"></app-video-section>
+  </ul>
+</div>
+
+<!-- <ul *ngFor="let searchVideos of searchedVideos">
+  <app-video-section [thumbnail]="videos.snippet.thumbnails.medium.url", [videoTitle]="videos.snippet.title" [videoId]="videos.id"></app-video-section>
+</ul> -->
+<hr>
+  <div class="row">
+  <ul *ngFor="let searchVideos of searchedVideos"> 
+  <app-video-section [thumbnail]="searchVideos.snippet.thumbnails.medium.url" [videoTitle]="searchVideos.snippet.title" [channelTitle]="searchVideos.snippet.channelTitle" [videoId]="searchVideos.id.videoId"></app-video-section>
+  </ul>
+</div>
+
+
+<!-- <a target="_blank" href="https://www.youtube.com/channel/{{schannel.snippet.channelId}}">
+  <img class="img-thumbnail" src="{{schannel.snippet.thumbnails.medium.url}}"/></a>
+  {{schannel.snippet.channelTitle}} &nbsp;&nbsp;
+  <button class="btn btn-btn-primary" (click)="addfav(schannel)"> addTofav</button> -->
+  <hr>
+  <div class="row">
+  <ul *ngFor="let videos of popularVideos"> 
+  <app-video-section  [thumbnail]="videos.snippet.thumbnails.medium.url" [videoTitle]="videos.snippet.title" [channelTitle]="videos.snippet.channelTitle" [videoId]="videos.id"></app-video-section>
+  </ul>
+</div>
+  <!-- <a target="_blank" href="https://www.youtube.com/channel/{{channel.snippet.channelId}}">
+    <img class="img-thumbnail" src="{{channel.snippet.thumbnails.medium.url}}"/></a>
+    {{channel.snippet.channelTitle}} &nbsp;&nbsp;
+    <button class="btn btn-btn-primary" (click)="addfav(channel)"> addTofav</button> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

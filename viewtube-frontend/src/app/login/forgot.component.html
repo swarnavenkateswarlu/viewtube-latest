@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login </title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./login.component.css">
+
+</head>
+<body>
+  <main class="d-flex align-items-center min-vh-100">
+    <div class="container">
+        <div class="card login-card">
+        <div class="form-group mb-4">
+            <!-- <label for="password" nclass="sr-only">Password</label>-->
+             <input type="password" name="password" id="password" class="form-control" placeholder=" NewPassword" required
+             [(ngModel)]="password">
+           </div>
+           <div class="form-group" *ngIf="isRegister">
+             <label for="confirmPassword" class="sr-only">Confirm Password</label>
+             <input type="text" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirm Password" required [(ngModel)]="confirmPassword">
+           </div>
+           <ng-template #elseBlock>
+            <button type="submit" class="btn btn-block login-btn mb-4" >submit </button>
+          </ng-template>
+         
+
+     <!-- <h3 style="display: inline;">Viewtube</h3>-->
+      
+           </div>
+           </div>
