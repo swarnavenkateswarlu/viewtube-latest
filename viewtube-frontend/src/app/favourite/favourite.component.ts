@@ -3,7 +3,8 @@ import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { MiddleService } from '../middle.service';
 import { SharedService } from '../Services/shared.service';
-
+import {FavServiceService} from '../Services/fav-service.service';
+import { AuthServiceService } from './../Services/auth-service.service';
 @Component({
   selector: 'app-favourite',
   templateUrl: './favourite.component.html',
@@ -13,14 +14,28 @@ export class FavouriteComponent implements OnInit {
   
   userFavourites:any;
   favChannelList:any;
-  constructor( private mservice:MiddleService,private router:Router,private share:SharedService) { }
-
+  userId:any;
+  userData : any;
+  videoData:any;
+  constructor(  private authservice:AuthServiceService,private favservice:FavServiceService ,private mservice:MiddleService,private router:Router,private share:SharedService) { }
+  
   ngOnInit(): void {
-    this.userFavourites=this.share.favVideoList
-    console.log(this.userFavourites)
-    // console.log(this.mservice.getFav());
-    // this.favChannelList=this.mservice.getFav();
-    // console.log(this.favChannelList)
+   // this.userId=this.favservice.favVideoDetails.userId;
+   // console.log(this.userId)
+   
+    this.authservice.getUser().subscribe(res=>{
+     this.userData = res;
+     this.userId = this.userData.userId;
+     console.log(this.userId)
+    });
+  
+ // console.log(this.userId);
+   
+    this.favservice.myfavVideos(this.userId).subscribe((data) => {
+      console.log(data);
+      this.videoData=data[5];
+      console.log(this.videoData)
+    })
   }
   // getFavourites(){
   //   this.userFavourites=this.share.getFavourites()

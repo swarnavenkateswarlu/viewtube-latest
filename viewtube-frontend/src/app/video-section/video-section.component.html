@@ -3,10 +3,11 @@
     <a (click)="handleCick()"><img class="card-img-top" src="{{ thumbnail }}" alt="" /></a>
     <div class="card-body">
       <h6 class="">
-        <a (click)="handleCick()" style="cursor: pointer;">{{ videoTitle.substring(0,30) }}...</a>
+        <a style="cursor: pointer; color: primary" (click)="handleCick()">{{ videoTitle.substring(0,30) }}...</a>
+
         <div style="display: flex; justify-content: space-between;">
           <p>{{channelTitle}}</p>
-          <app-fav-button></app-fav-button>
+          <app-fav-button [userId]="singleUser"[thumbnail]="thumbnail"[videoId]="videoId" [channelTitle]="channelTitle" [videoTitle]="videoTitle"></app-fav-button>
         </div>
         
         <!-- <fa-icon [icon]="faHeart" ></fa-icon> -->
