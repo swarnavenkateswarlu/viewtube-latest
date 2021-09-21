@@ -18,8 +18,9 @@ body {
   height: 1.2em !important;
 }
 .login-card {
+  margin-left: -10px;
   border-radius: 10px;
-  
+  width: 1345px;
   overflow: hidden;
 }
 .login-card-img {
@@ -86,16 +87,12 @@ body {
   color: #fff;
   margin-bottom: 24px;
 }
-.login-card .signin-btn:hover {
+.login-card .btn-dark:hover {
   border: 1px solid #000;
   background-color: white;
   color: #000;
 }
-.login-card .signup-btn:hover {
-  border: 1px solid #000;
-  background-color: white;
-  color: #000;
-}
+
 .login-card .login-btn:hover {
   border: 1px solid #000;
   background-color: transparent;

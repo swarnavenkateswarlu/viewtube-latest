@@ -24,8 +24,8 @@
          <div  id="signup" *ngIf="isRegister"  class="d-flex flex-row">
           <!-- <a href="#" class="text-reset" ><button style="font-size:16px" >Sign up <i class="fa fa-sign-in"></i></button></a> -->
        
-          <a href="#" class="text-reset" style="margin-right: 100px;"  (click)="register()"><button style="font-size:16px; border-radius: 5px; border: 2px black solid;" class="btn signin-btn ">Sign In <i class="fa fa-sign-in"></i></button></a></div>
-        <div id="signup" *ngIf="!isRegister"><a href="#" class="text-reset"  (click)="register()" style="margin-right: 100px;"><button style="font-size:16px; border-radius: 5px; border: 2px black solid;" class="btn signup-btn ">Sign up <i class="fa fa-sign-in"></i></button></a></div>
+          <a href="#" class="text-reset" style="margin-right: 100px;"  (click)="register()"><button style="font-size:16px; border-radius: 5px; border: 2px black solid;" class="btn btn-dark ">Sign In <i class="fa fa-sign-in"></i></button></a></div>
+        <div id="signup" *ngIf="!isRegister"><a href="#" class="text-reset"  (click)="register()" style="margin-right: 100px;"><button style="font-size:16px; border-radius: 5px; border: 2px black solid;" class="btn btn-dark ">Sign up <i class="fa fa-sign-in"></i></button></a></div>
          
         <!-- <a id="home" href="/home"><i class="fa fa-home"></i></a> -->
       </nav>
@@ -68,7 +68,7 @@
                   
                   <div class="form-group" *ngIf="isRegister" > 
                     <label for="address" class="sr-only">Address</label>
-                    <input type="adrdress" name="address" id="address" class="form-control" placeholder="Address" required [(ngModel)]="address" >
+                    <input type="adrdress" name="address" id="address" class="form-control" placeholder="city" required [(ngModel)]="address" >
                   
                   </div>
                   <!-- <span class="help-bpx" *ngIf="email.touched && !email.valid">Please enter email value</span> -->
